@@ -75,8 +75,11 @@ $( document ).ready( function () {
     $( '#unsubscribe_form' ).submit( function ( e ) {
 
         e.preventDefault();
-
         client.unsubscribe( [{ address: destination }] );
+
+        $( '#unsubscribe' ).fadeOut({
+            duration: 'fast'
+        });
     });
 
     $( '#send_form' ).submit( function ( e ) {
