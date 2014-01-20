@@ -8,7 +8,7 @@ The above command:
 
 * Downloads the WildFly v8.0.0.CR1
 * Starts the server
-* Adds an [HornetQ](https://github.com/hornetq/hornetq) acceptor to let WildFly accept STOMP frames on a socket
+* Adds a [HornetQ](https://github.com/hornetq/hornetq) acceptor to let WildFly accept STOMP frames on a socket
 * Adds a JMS topic
 * Adds an application management user
 
