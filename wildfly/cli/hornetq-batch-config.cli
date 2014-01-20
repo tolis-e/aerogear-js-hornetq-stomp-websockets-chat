@@ -1,0 +1,9 @@
+# $WILDFLY_HOME/bin/jboss-cli.sh --file=/path/to/this/file.
+connect
+batch
+
+/subsystem=messaging/hornetq-server=default/acceptor=stomp-websocket:add(param={"protocols"=>"STOMP", "port"=>"61614"},factory-class="org.hornetq.core.remoting.impl.netty.NettyAcceptorFactory")
+/subsystem=messaging/hornetq-server=default/jms-topic=chat/:add(entries=["/java:jboss:exported/topic/chat"])
+
+run-batch
+:reload
