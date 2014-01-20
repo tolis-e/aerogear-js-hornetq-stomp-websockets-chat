@@ -27,9 +27,10 @@ if [ -f "$WILDFLY_PATH.zip" ]; then
     unzip $WILDFLY_PATH.zip -d $BASE_DIR/
 else
     echo "The path does not contain a wildfly distribution"
+    exit 1
 fi
 
-$WILDFLY_PATH/bin/standalone.sh -c standalone-full.xml &
+nohup $WILDFLY_PATH/bin/standalone.sh -c standalone-full.xml &
 sleep 7
 $WILDFLY_PATH/bin/jboss-cli.sh --file="$HORNETQ_CLI_PATH/hornetq-batch-config.cli" &
 sleep 4
